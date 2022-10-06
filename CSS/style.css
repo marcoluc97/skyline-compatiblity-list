@@ -2,6 +2,7 @@ body{
     color: white;
     font-family: 'Segoe UI';
     background-color: #080808;
+    overflow: hidden;
 }
 
 .maincontainer{
@@ -58,6 +59,12 @@ body{
 }
 
 .searchbutton{
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3031/3031293.png");
+    background-size: cover;
+    background-size: 30px 30px;
+    background-position: 8px 8px;
+    filter: invert(1);
+    background-repeat: no-repeat;
     color: white;
     font-size: 25px;
     position: absolute;
@@ -67,8 +74,8 @@ body{
     width: 47px;
     border-radius: 18px;
     border: none;
-    background-color: #242424;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);
+    background-color: #DBDBDB;
+/*     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082); */
 }
 
 .searchbutton:hover{
@@ -167,7 +174,6 @@ body{
     padding-top: 2px;
     margin-left: 10px;
     margin-top: -10px;
-    word-break: keep-all;
 }
 
 #nothing{
@@ -304,7 +310,40 @@ a{
     border: 1px rgba(255, 88, 88, 0.562) solid;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) {
+    .gamelistcontainer{
+        top: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-left: 5%;
+        height: 82%;
+        width: 80%;
+    }
+    .webtitle{
+        display: none;
+    }
+    .gamecontainer{
+        width: 45%;
+    }
+    .searchbar{
+        width: 78%;
+    }
+    .filtercontainer{
+        top: 70px;
+        left: 50%;
+        right: 0;
+        transform: translateX(-46%);
+        width: 90%;
+    }
+    .filterbutton{
+        width: 23%;
+    }
+    .topbar{
+        height: 130px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
     .webtitle{
         display: none;
     }
@@ -316,7 +355,12 @@ a{
         box-sizing: border-box;
     }
     .gamelistcontainer{
-        top: 125px;
+        padding: 0;
+        left: 0;
+        transform: translateX(0);
+        width: 100%;
+        height: 90%;
+        top: 140px;
     }
     .topbar{
         height: 130px;
@@ -338,10 +382,30 @@ a{
     .filtercontainer{
         top: 70px;
         left: 50%;
+        right: 0;
         transform: translateX(-50%);
-        width: 90%;
+        width: 380px;
     }
     .filterbutton{
-        width: 24%;
+        width: 23%;
+    }
+    .gamestatus{
+        width: 140px;
+    }
+    .labels{
+        width: 110px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .filtercontainer{
+        left: 10px;
+        transform: translateX(0px);
+    }
+    .filterbutton{
+        width: 80px;
+    }
+    .searchbar{
+        width: 78%;
     }
 }
