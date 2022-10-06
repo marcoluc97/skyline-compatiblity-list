@@ -1,0 +1,245 @@
+body{
+    color: white;
+    font-family: 'Segoe UI';
+    background-color: #0c1622;
+}
+
+.maincontainer{
+    display: flex;
+}
+
+.skylinelogo{
+    top: 5px;
+    left: 10px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+    z-index: 20;
+    position: absolute;
+    background-image: url(/Images/skylinelogo.png);
+}
+
+.webtitle{
+    color: #d4e8ff;;
+    position: absolute;
+    top: -15px;
+    left: 80px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.topbar{
+    background-color: #0a233f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.507);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.searchbar{
+    font-size: 20px;
+    padding-left: 15px;
+    color: gray;
+    position: absolute;
+    border-radius: 18px;
+    height: 45px;
+    width: 40%;
+    background-color: #10345c;
+    top: 15px;
+    right: 70px;
+    border: none;
+    /* border: 2px solid rgba(255, 255, 255, 0.301); */
+    transition: .2s;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+.searchbutton{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 47px;
+    width: 47px;
+    border-radius: 18px;
+    border: none;
+    background-color: #10345c;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+.searchbutton:hover{
+    cursor: pointer;
+}
+
+.searchbar:focus{
+    color: white;
+    outline: none;
+}
+
+.gamelistcontainer{
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.gamecontainer{
+    background-color: rgb(14, 38, 65);
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.37);
+    vertical-align: top;
+    display:inline-block;
+}
+
+.gametitle{
+    font-size: 20px;
+    position: relative;
+    bottom: 10px;
+    left: 15px;
+    font-weight: 600;
+    width: 90%;
+    float: left;
+    line-clamp: 1;
+}
+
+.gamedate{
+    color: rgba(255, 255, 255, 0.596);
+    position: relative;
+    font-weight: 600;
+    bottom: 30px;
+    margin-left: 15px;
+}
+
+.gameinfocontainer{
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+    height: 50px;
+    position: relative;
+    bottom: 55px;
+}
+
+.extralabels{
+    float: left;
+    width: 50%;
+    height: 105px;
+    position: relative;
+    bottom: 55px;
+    margin-top: 20px;
+}
+
+.gamestatustitle, .extralabelstitle{
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.extralabelstitle{
+    margin-left: 0;
+}
+
+.gamestatus {
+    color: rgb(180, 240, 60);
+    background-color: rgba(21, 77, 14, 0.397);
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    width: 110px;
+    border: 2px rgba(153, 205, 50, 0.466) solid;
+    height: 20px;
+    padding-top: 2px;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+#status-ingame{
+    color: rgb(180, 240, 60);
+}
+
+#status-nothing{
+    color: rgb(255, 185, 173);
+    background-color: rgba(131, 42, 42, 0.774);
+    border: 1px rgb(255, 88, 88) solid;
+}
+
+#status-boots{
+    color: rgb(255, 230, 0);
+    background-color: rgb(97, 99, 17);
+    border: 1px rgb(255, 210, 88) solid;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+}
+
+.labels {
+    background-color: rgba(21, 77, 14, 0.397);
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    width: 110px;
+    border: 1px rgba(153, 205, 50, 0.466) solid;
+    height: 20px;
+    padding-top: 2px;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+#ingame{
+    color: rgb(180, 240, 60);
+}
+
+#regression{
+    color: rgb(255, 208, 146);
+    background-color: rgba(131, 86, 55, 0.774);
+    border: 1px rgb(255, 104, 4) solid;
+}
+
+#services{
+    color: rgb(255, 185, 173);
+    background-color: rgba(131, 42, 42, 0.774);
+    border: 1px rgb(255, 88, 88) solid;
+}
+
+@media only screen and (max-width: 500px) {
+    .webtitle{
+        display: none;
+    }
+    .skylinelogo{
+        display: none;
+    }
+    .searchbar{
+        width: 80vw;
+        box-sizing: border-box;
+    }
+    .gamecontainer{
+        position: relative;
+        left: 50%;
+        transform: translateX(-52%);
+        width: 90%;
+    }
+    .gameinfocontainer{
+        width: 48%;
+        margin-left: 5px;
+    }
+    .extralabels{
+        width: 43%;
+        margin-left: 20px;
+    }
+}
