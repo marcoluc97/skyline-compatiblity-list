@@ -47,7 +47,7 @@ body{
     position: absolute;
     border-radius: 18px;
     height: 45px;
-    width: 40%;
+    width: 500px;
     background-color: #242424;
     top: 15px;
     right: 70px;
@@ -77,10 +77,12 @@ body{
 
 .searchbar:focus{
     color: white;
+    background-color: #2e2e2e;
     outline: none;
 }
 
 .gamelistcontainer{
+    padding-top: 10px;
     top: 75px;
     left: 0;
     width: 100%;
@@ -92,7 +94,8 @@ body{
 
 .gamecontainer{
     background-color: #161616;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
     width: 300px;
@@ -109,10 +112,11 @@ body{
     position: relative;
     bottom: 10px;
     left: 15px;
+    max-height: 80px;
+    overflow: hidden;
     font-weight: 600;
     width: 90%;
     float: left;
-    line-clamp: 1;
 }
 
 .gamedate{
@@ -256,6 +260,33 @@ a{
     margin-top: -10px;
 }
 
+.filtercontainer{
+    position: absolute;
+    top: 15px;
+    right: 595px;
+}
+
+.filterbutton{
+    background-color: #242424;
+    color: gray;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);
+    width: 70px;
+    text-align: center;
+    height: 47px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Segoe UI';
+}
+
+.filterbutton[selected=" "], .filterbutton:hover{
+    background-color: #3b3b3b;
+    color:white;
+}
+
 #ingame{
     color: rgb(180, 240, 60);
 }
@@ -272,7 +303,7 @@ a{
     border: 1px rgba(255, 88, 88, 0.562) solid;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
     .webtitle{
         display: none;
     }
@@ -282,6 +313,12 @@ a{
     .searchbar{
         width: 80vw;
         box-sizing: border-box;
+    }
+    .gamelistcontainer{
+        top: 125px;
+    }
+    .topbar{
+        height: 130px;
     }
     .gamecontainer{
         position: relative;
@@ -296,5 +333,14 @@ a{
     .extralabels{
         width: 40%;
         margin-left: 12%;
+    }
+    .filtercontainer{
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+    .filterbutton{
+        width: 24%;
     }
 }

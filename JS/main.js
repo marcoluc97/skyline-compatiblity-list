@@ -2,7 +2,14 @@ const searchbar = document.querySelector('.searchbar')
 const searchok = document.querySelector('.searchbutton')
 const listcontainer = document.querySelector('.gamelistcontainer')
 
+const fplayable = document.querySelector('#fplayable')
+const fingame = document.querySelector('#fingame')
+const fboots = document.querySelector('#fboots')
+const fnothing = document.querySelector('#fnothing')
+
 //var appender = '<div class="gamelistcontainer"> <div class="gamecontainer"> <p class="gametitle">PC Building Simulator</p> <p class="gamedate">15:00 5 Oct</p> <div class="gameinfocontainer"> <p class="gamestatustitle">Status:</p> <p class="gamestatus" id="ingame">status-ingame</p> </div> <div class="extralabels"> <p class="extralabelstitle">Labels:</p> <p class="labels" id="regression">regression</p> <p class="labels" id="services">services</p> <p class="labels" id="ingame">status-ingame</p> </div> </div> </div>'
+
+var currentfilter = "";
 
 function loadissues() {
     var responseObj = JSON.parse(this.responseText);
@@ -34,12 +41,77 @@ searchok.addEventListener('click', function(e){
     }else{
         var request = new XMLHttpRequest();
         request.onload = loadissues; 
-        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
         request.send()
-       /*  label:status-nothing+ */
+        
     }
 })
 
+fplayable.addEventListener('click', function(e){
+    if(this.getAttribute('selected') == " "){
+        this.removeAttribute('selected')
+        currentfilter = "";
+        return
+    }
+    currentfilter = "label:status-playable+"
+    console.log(Array.prototype.slice.call(this.parentElement.children))
+    Array.prototype.slice.call(this.parentElement.children).forEach(element => {
+        element.removeAttribute('selected');
+    })
+    this.setAttribute('selected', " ")
+})
+
+fboots.addEventListener('click', function(e){
+    if(this.getAttribute('selected') == " "){
+        this.removeAttribute('selected')
+        currentfilter = "";
+        return
+    }
+    currentfilter = "label:status-boots+"
+    Array.prototype.slice.call(this.parentElement.children).forEach(element => {
+        element.removeAttribute('selected');
+    })
+    this.setAttribute('selected', " ")
+})
+
+fingame.addEventListener('click', function(e){
+    if(this.getAttribute('selected') == " "){
+        this.removeAttribute('selected')
+        currentfilter = "";
+        return
+    }
+    currentfilter = "label:status-ingame+"
+    Array.prototype.slice.call(this.parentElement.children).forEach(element => {
+        element.removeAttribute('selected');
+    })
+    this.setAttribute('selected', " ")
+})
+
+fnothing.addEventListener('click', function(e){
+    if(this.getAttribute('selected') == " "){
+        this.removeAttribute('selected')
+        currentfilter = "";
+        return
+    }
+    currentfilter = "label:status-nothing+"
+    Array.prototype.slice.call(this.parentElement.children).forEach(element => {
+        element.removeAttribute('selected');
+    })
+    this.setAttribute('selected', " ")
+})
+
+/* searchbar.addEventListener('keyup', function(e){
+    if(!searchbar.value){
+        return
+    }else{
+        var request = new XMLHttpRequest();
+        request.onload = loadissues; 
+        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}label:${currentfilter}+state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+        request.send()
+        
+    }
+})
+ */
 var request = new XMLHttpRequest();
 request.onload = loadissues; 
 request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
