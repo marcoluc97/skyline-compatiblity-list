@@ -1,6 +1,8 @@
 const searchbar = document.querySelector('.searchbar')
 const searchok = document.querySelector('.searchbutton')
 const listcontainer = document.querySelector('.gamelistcontainer')
+const topbar = document.querySelector('.topbar')
+const filterbuttons = document.querySelectorAll('.filterbutton')
 
 const fplayable = document.querySelector('#fplayable')
 const fingame = document.querySelector('#fingame')
@@ -161,6 +163,33 @@ fnothing.addEventListener('click', function(e){
         request.onload = loadissues; 
         request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
         request.send()      
+    }
+})
+
+searchbar.addEventListener('mouseover', function(e){
+    filterbuttons.forEach(element => {
+        element.style.display = 'unset';
+    })
+})
+
+listcontainer.addEventListener('mouseover', function(e){
+    if(window.innerWidth < 1180){
+        return
+    }
+    filterbuttons.forEach(element => {
+        element.style.display = 'none';
+    })
+})
+
+topbar.addEventListener('mouseover', function(e){
+    console.log(screen.width)
+    if(window.innerWidth < 1180){
+        return
+    }
+    if(e.target.getAttribute('class') == 'topbar'){
+        filterbuttons.forEach(element => {
+            element.style.display = 'none';
+        })
     }
 })
 
