@@ -1,7 +1,7 @@
 body{
     color: white;
     font-family: 'Segoe UI';
-    background-color: #0c1622;
+    background-color: #080808;
 }
 
 .maincontainer{
@@ -9,7 +9,7 @@ body{
 }
 
 .skylinelogo{
-    top: 5px;
+    top: 10px;
     left: 10px;
     background-size: 60px 60px;
     width: 60px;
@@ -20,16 +20,16 @@ body{
 }
 
 .webtitle{
-    color: #d4e8ff;;
+    color: white;
     position: absolute;
-    top: -15px;
+    top: -12px;
     left: 80px;
     font-size: 30px;
     font-weight: 600;
 }
 
 .topbar{
-    background-color: #0a233f;
+    background-color: #161616;
     position: absolute;
     top: 0;
     left: 0;
@@ -43,12 +43,12 @@ body{
 .searchbar{
     font-size: 20px;
     padding-left: 15px;
-    color: gray;
+    color: white;
     position: absolute;
     border-radius: 18px;
     height: 45px;
     width: 40%;
-    background-color: #10345c;
+    background-color: #242424;
     top: 15px;
     right: 70px;
     border: none;
@@ -67,7 +67,7 @@ body{
     width: 47px;
     border-radius: 18px;
     border: none;
-    background-color: #10345c;
+    background-color: #242424;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);
 }
 
@@ -91,16 +91,17 @@ body{
 }
 
 .gamecontainer{
-    background-color: rgb(14, 38, 65);
+    background-color: #161616;
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
     width: 300px;
-    height: auto;
+    height: 180px;
     border-radius: 20px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.37);
     vertical-align: top;
     display:inline-block;
+    overflow: hidden;
 }
 
 .gametitle{
@@ -133,8 +134,8 @@ body{
 
 .extralabels{
     float: left;
-    width: 50%;
-    height: 105px;
+    width: 15%;
+    height: 75px;
     position: relative;
     bottom: 55px;
     margin-top: 20px;
@@ -156,12 +157,18 @@ body{
     padding: 5px;
     text-align: center;
     border-radius: 20px;
-    width: 110px;
+    width: 120px;
     border: 2px rgba(153, 205, 50, 0.466) solid;
     height: 20px;
     padding-top: 2px;
     margin-left: 10px;
     margin-top: -10px;
+}
+
+#nothing{
+    color: rgb(179, 179, 179);
+    background-color: rgb(44, 44, 44);
+    border: 1px rgb(150, 150, 150) solid;
 }
 
 #status-ingame{
@@ -170,14 +177,62 @@ body{
 
 #status-nothing{
     color: rgb(255, 185, 173);
-    background-color: rgba(131, 42, 42, 0.774);
-    border: 1px rgb(255, 88, 88) solid;
+    background-color: rgba(131, 42, 42, 0.349);
+    border: 1px rgba(255, 88, 88, 0.541) solid;
 }
 
 #status-boots{
-    color: rgb(255, 230, 0);
-    background-color: rgb(97, 99, 17);
-    border: 1px rgb(255, 210, 88) solid;
+    color: rgba(255, 230, 0, 0.904);
+    background-color: rgba(98, 99, 17, 0.445);
+    border: 1px rgba(255, 210, 88, 0.616) solid;
+}
+
+[id="32-bit"]{
+    color: rgba(255, 230, 0, 0.904);
+    background-color: rgba(236, 240, 25, 0.445);
+    border: 1px rgba(255, 210, 88, 0.616) solid;
+}
+
+#audio{
+    color: #c1a1ee;
+    background-color: #382e46;
+    border: 1px #7d679c solid;
+}
+
+#nvdec{
+    color: #c4b4c9;
+    background-color: #302b31;
+    border: 1px #746b77 solid;
+}
+
+#gpu{
+    color: #50add4;
+    background-color: #112831;
+    border: 1px #2b6077 solid;
+}
+
+#kernel{
+    color: #bbcfe6;
+    background-color: #2e3338;
+    border: 1px #8795a5 solid;
+}
+
+#vfs{
+    color: #baa7f8;
+    background-color: #292538;
+    border: 1px #7b6da7 solid;
+}
+
+#opengl{
+    color: #bbcfe6;
+    background-color: #2e3338;
+    border: 1px #8795a5 solid;
+}
+
+#guest-crash{
+    color: #ded4ff;
+    background-color: #292538;
+    border: 1px #7b6da7 solid;
 }
 
 a{
@@ -207,14 +262,14 @@ a{
 
 #regression{
     color: rgb(255, 208, 146);
-    background-color: rgba(131, 86, 55, 0.774);
-    border: 1px rgb(255, 104, 4) solid;
+    background-color: rgba(131, 85, 55, 0.507);
+    border: 1px rgba(255, 104, 4, 0.63) solid;
 }
 
 #services{
     color: rgb(255, 185, 173);
-    background-color: rgba(131, 42, 42, 0.774);
-    border: 1px rgb(255, 88, 88) solid;
+    background-color: rgba(131, 42, 42, 0.432);
+    border: 1px rgba(255, 88, 88, 0.562) solid;
 }
 
 @media only screen and (max-width: 500px) {
@@ -235,11 +290,11 @@ a{
         width: 90%;
     }
     .gameinfocontainer{
-        width: 48%;
+        width: 40%;
         margin-left: 5px;
     }
     .extralabels{
-        width: 43%;
-        margin-left: 20px;
+        width: 40%;
+        margin-left: 12%;
     }
 }
