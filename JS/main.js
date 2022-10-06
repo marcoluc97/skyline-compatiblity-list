@@ -173,7 +173,7 @@ searchbar.addEventListener('mouseover', function(e){
 })
 
 listcontainer.addEventListener('mouseover', function(e){
-    if(window.innerWidth < 1180){
+    if(window.innerWidth < 1100){
         return
     }
     filterbuttons.forEach(element => {
@@ -183,7 +183,7 @@ listcontainer.addEventListener('mouseover', function(e){
 
 topbar.addEventListener('mouseover', function(e){
     console.log(screen.width)
-    if(window.innerWidth < 1180){
+    if(window.innerWidth < 1100){
         return
     }
     if(e.target.getAttribute('class') == 'topbar'){
