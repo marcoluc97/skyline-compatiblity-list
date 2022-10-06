@@ -16,7 +16,7 @@ body{
     height: 60px;
     z-index: 20;
     position: absolute;
-    background-image: url(/Images/skylinelogo.png);
+    background-image: url(Images/skylinelogo.png);
 }
 
 .webtitle{
