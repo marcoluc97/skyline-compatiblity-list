@@ -51,6 +51,14 @@ fplayable.addEventListener('click', function(e){
     if(this.getAttribute('selected') == " "){
         this.removeAttribute('selected')
         currentfilter = "";
+        if(!searchbar.value){
+            return
+        }else{
+            var request = new XMLHttpRequest();
+            request.onload = loadissues; 
+            request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+            request.send()      
+        }
         return
     }
     currentfilter = "label:status-playable+"
@@ -59,12 +67,28 @@ fplayable.addEventListener('click', function(e){
         element.removeAttribute('selected');
     })
     this.setAttribute('selected', " ")
+    if(!searchbar.value){
+        return
+    }else{
+        var request = new XMLHttpRequest();
+        request.onload = loadissues; 
+        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+        request.send()      
+    }
 })
 
 fboots.addEventListener('click', function(e){
     if(this.getAttribute('selected') == " "){
         this.removeAttribute('selected')
         currentfilter = "";
+        if(!searchbar.value){
+            return
+        }else{
+            var request = new XMLHttpRequest();
+            request.onload = loadissues; 
+            request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+            request.send()      
+        }
         return
     }
     currentfilter = "label:status-boots+"
@@ -72,12 +96,28 @@ fboots.addEventListener('click', function(e){
         element.removeAttribute('selected');
     })
     this.setAttribute('selected', " ")
+    if(!searchbar.value){
+        return
+    }else{
+        var request = new XMLHttpRequest();
+        request.onload = loadissues; 
+        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+        request.send()      
+    }
 })
 
 fingame.addEventListener('click', function(e){
     if(this.getAttribute('selected') == " "){
         this.removeAttribute('selected')
         currentfilter = "";
+        if(!searchbar.value){
+            return
+        }else{
+            var request = new XMLHttpRequest();
+            request.onload = loadissues; 
+            request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+            request.send()      
+        }
         return
     }
     currentfilter = "label:status-ingame+"
@@ -85,12 +125,28 @@ fingame.addEventListener('click', function(e){
         element.removeAttribute('selected');
     })
     this.setAttribute('selected', " ")
+    if(!searchbar.value){
+        return
+    }else{
+        var request = new XMLHttpRequest();
+        request.onload = loadissues; 
+        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+        request.send()      
+    }
 })
 
 fnothing.addEventListener('click', function(e){
     if(this.getAttribute('selected') == " "){
         this.removeAttribute('selected')
         currentfilter = "";
+        if(!searchbar.value){
+            return
+        }else{
+            var request = new XMLHttpRequest();
+            request.onload = loadissues; 
+            request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+            request.send()      
+        }
         return
     }
     currentfilter = "label:status-nothing+"
@@ -98,20 +154,29 @@ fnothing.addEventListener('click', function(e){
         element.removeAttribute('selected');
     })
     this.setAttribute('selected', " ")
-})
-
-/* searchbar.addEventListener('keyup', function(e){
     if(!searchbar.value){
         return
     }else{
         var request = new XMLHttpRequest();
         request.onload = loadissues; 
-        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}label:${currentfilter}+state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
-        request.send()
-        
+        request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+        request.send()      
     }
 })
- */
+
+searchbar.addEventListener('keyup', function(e){
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        if(!searchbar.value){
+            return
+        }else{
+            var request = new XMLHttpRequest();
+            request.onload = loadissues; 
+            request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}${currentfilter}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
+            request.send()      
+        }
+    }
+})
+
 var request = new XMLHttpRequest();
 request.onload = loadissues; 
 request.open('get', `https://api.github.com/search/issues?q=${searchbar.value.split(' ').join('+')}state:open+in:title+repo:skyline-emu/skyline-games-list&per_page=100`, true)
