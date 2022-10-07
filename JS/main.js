@@ -24,6 +24,8 @@ var topperc = ``
 var date = new Date()
 date.setDate(date.getDate() + 1)
 
+searchbar.value = ""
+
 function percentagecalculator(){
     var responseObj = JSON.parse(this.responseText);
     console.log(responseObj)
