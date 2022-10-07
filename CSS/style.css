@@ -586,17 +586,21 @@ body{
         bottom: 60px;
         left: 80px;
     }
+    .gametitle{
+        width: 80%;
+    }
     .gamecontainer{
         height: 80px;
     }
     .percentagecontainer{
         top: 10px;
         left: 50%;
-        transform: translateX(-32%);
+        transform: translateX(-37%);
     }
     .circlecontainer{
         margin: 0;
         margin-top: 10px;
+        margin-right: 3%;
         width: 80px;
         height: 80px;
     }
